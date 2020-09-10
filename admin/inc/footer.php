@@ -26,6 +26,7 @@
         });
     </script>
     <script src="../assets/assets/js/custom.js"></script>
+
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
@@ -91,6 +92,18 @@
 
         multiCheck(c3);
     </script>
-    <!-- END PAGE LEVEL SCRIPTS -->  
+    <!-- END PAGE LEVEL SCRIPTS -->
+    
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+    <script src="../assets/assets/js/scrollspyNav.js"></script>
+    <script src="../assets/plugins/select2/select2.min.js"></script>
+    <script src="../assets/plugins/select2/custom-select2.js"></script>
+    <script>
+        $(".placeholder").select2({
+            placeholder: "Make a Selection",
+            allowClear: true
+        });
+    </script>
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
 </body>
 </html>
