@@ -9,38 +9,34 @@ if (isset($_POST['logout'])) {
 	echo "<script>alert('Berhasil Log Out.');document.location.href='../index.php'</script>";
 }
 
-/*BARANG START*/
+/*KATEGORI START*/
 if (isset($_POST['proses-batal'])) {
 	$_SESSION['fungsi'] = "view";
 }
 
-if (isset($_POST['tambah-barang'])) {
-	$nama_barang 		= $_POST['nama_barang'];
-	$id_sub_jenis 		= $_POST['id_sub_jenis'];
-	$status 			= $_POST['status'];
+if (isset($_POST['tambah-kategori'])) {
+	$nama_kategori 		= $_POST['nama_kategori'];
 	$_SESSION['fungsi'] = "view";
 
-	$sql = mysqli_query($koneksi,"INSERT INTO barang VALUES('','$nama_barang','$id_sub_jenis','$status')");
-	echo "<script>alert('Berhasil Menambahkan Data.');document.location.href='barang.php'</script>";
+	$sql = mysqli_query($koneksi,"INSERT INTO kategori VALUES('','$nama_kategori')");
+	echo "<script>alert('Berhasil Menambahkan Data.');document.location.href='kategori.php'</script>";
 }
 
-if (isset($_POST['edit-barang'])) {
-	$id_barang	 		= $_POST['id_barang'];
-	$nama_barang 		= $_POST['nama_barang'];
-	$id_sub_jenis 		= $_POST['id_sub_jenis'];
-	$status 			= $_POST['status'];
+if (isset($_POST['edit-kategori'])) {
+	$id_kategori	 	= $_POST['id_kategori'];
+	$nama_kategori 		= $_POST['nama_kategori'];
 	$_SESSION['fungsi'] = "view";
 
-	$sql = mysqli_query($koneksi,"UPDATE barang SET nama_barang='$nama_barang', id_sub_jenis='$id_sub_jenis', status='$status' WHERE id_barang='$id_barang'");
-	echo "<script>alert('Berhasil Mengedit Data.');document.location.href='barang.php'</script>";
+	$sql = mysqli_query($koneksi,"UPDATE kategori SET nama_kategori='$nama_kategori' WHERE id_kategori='$id_kategori'");
+	echo "<script>alert('Berhasil Mengedit Data.');document.location.href='kategori.php'</script>";
 }
 
-if (isset($_POST['delete-barang'])) {
-	$id_barang	 		= $_POST['id_barang'];
+if (isset($_POST['delete-kategori'])) {
+	$id_kategori	 	= $_POST['id_kategori'];
 	$_SESSION['fungsi'] = "view";
 
-	$sql = mysqli_query($koneksi,"DELETE FROM barang WHERE id_barang='$id_barang'");
-	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='barang.php'</script>";
+	$sql = mysqli_query($koneksi,"DELETE FROM kategori WHERE id_kategori='$id_kategori'");
+	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='kategori.php'</script>";
 }
-/*BARANG END*/
+/*KATEGORI END*/
 ?>
