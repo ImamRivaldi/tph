@@ -39,4 +39,31 @@ if (isset($_POST['delete-kategori'])) {
 	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='kategori.php'</script>";
 }
 /*KATEGORI END*/
+
+/*SATUAN START*/
+if (isset($_POST['tambah-satuan'])) {
+	$nama_satuan		= $_POST['nama_satuan'];
+	$_SESSION['fungsi']	= "view";
+
+	$sql = mysqli_query($koneksi, "INSERT INTO satuan VALUES('','$nama_satuan')");
+	echo "<script>alert('Berhasil Menambahkan Data.');document.location.href='satuan.php'</script>";
+}
+
+if (isset($_POST['edit-satuan'])) {
+	$id_satuan	 		= $_POST['id_satuan'];
+	$nama_satuan 		= $_POST['nama_satuan'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"UPDATE satuan SET nama_satuan='$nama_satuan' WHERE id_satuan='$id_satuan'");
+	echo "<script>alert('Berhasil Mengedit Data.');document.location.href='satuan.php'</script>";
+}
+
+if (isset($_POST['delete-satuan'])) {
+	$id_satuan	 		= $_POST['id_satuan'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"DELETE FROM satuan WHERE id_satuan='$id_satuan'");
+	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='satuan.php'</script>";
+}
+/*SATUAN END*/  
 ?>
