@@ -99,6 +99,7 @@ include 'inc/header.php';
                                     <div class="form-group mb-4">
                                         <label for="t-text" class="sr-only">Nama Kategori</label>
                                         <select class="placeholder js-states form-control" name="id_kategori" title="Pilih Data Kategori">
+                                            <option value="<?=$data['id_kategori'];?>"><?=$data['nama_kategori'];?></option>
                                             <?php
                                                 $sqlkategori = mysqli_query($koneksi,"SELECT * FROM kategori");
                                                 while ($row = mysqli_fetch_assoc($sqlkategori)) {

@@ -83,6 +83,10 @@ if (isset($_POST['tambah-barang'])) {
 if (isset($_POST['edit-barang'])) {
 	$id_barang	 		= $_POST['id_barang'];
 	$nama_barang 		= $_POST['nama_barang'];
+	$id_kategori		= $_POST['id_kategori'];
+	$id_satuan			= $_POST['id_satuan'];
+	$harga				= $_POST['harga'];
+	$stok				= $_POST['stok'];
 	$_SESSION['fungsi'] = "view";
 
 	$sql = mysqli_query($koneksi,"UPDATE barang SET nama_barang='$nama_barang', id_kategori='$id_kategori', id_satuan='$id_satuan', harga='$harga', satuan='$satuan' WHERE id_barang='$id_barang'");
